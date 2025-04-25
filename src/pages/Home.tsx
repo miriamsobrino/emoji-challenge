@@ -61,7 +61,7 @@ function Home() {
         setIsErrorAnswer(false);
         setIsCorrectAnswer(false);
         setCurrentMovieIndex((prevIndex) => prevIndex + 1);
-      }, 500);
+      }, 800);
       setUserAnswer('');
     } else {
       const finalScore = isCorrect ? actualScore + 5 : actualScore;
@@ -129,7 +129,16 @@ function Home() {
                 {userScore}
               </span>
             </div>
-            <h3 className='text-5xl lg:text-4xl py-4'>{currentMovie.emojis}</h3>
+            <h3 className='text-5xl lg:text-4xl '>{currentMovie.emojis}</h3>
+            {isErrorAnswer || isCorrectAnswer ? (
+              <p className='font-bold'>
+                {Array.isArray(currentMovie.answers)
+                  ? currentMovie.answers[0]
+                  : currentMovie.answer}
+              </p>
+            ) : (
+              ''
+            )}
             <form className='flex gap-2 ' onSubmit={handleSubmit}>
               <input
                 value={userAnswer}
