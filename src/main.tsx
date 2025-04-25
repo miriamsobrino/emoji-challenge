@@ -6,7 +6,6 @@ import Layout from './Layout.tsx';
 import Home from './pages/Home.tsx';
 import './index.css';
 import { AuthProvider } from './context/AuthContext.tsx';
-import ProtectedRoute from './components/ProtectedRoute.tsx';
 import Ranking from './pages/Ranking.tsx';
 
 const router = createBrowserRouter([
@@ -20,19 +19,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/home',
-        element: (
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
-        ),
+        element: <Home />,
       },
       {
         path: '/ranking',
-        element: (
-          <ProtectedRoute>
-            <Ranking />
-          </ProtectedRoute>
-        ),
+        element: <Ranking />,
       },
     ],
   },

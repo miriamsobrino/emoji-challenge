@@ -37,26 +37,36 @@ function Ranking() {
         Ranking Puntuaciones
       </h2>
       <div className='flex justify-center bg-amber-50 w-[300px] mx-auto rounded-md py-3 '>
-        <ul>
-          {users
-            .map((user, index) => (
-              <li
-                key={user.id}
-                className='flex items-start justify-start gap-2 py-1 px-4'
-              >
-                <span className={` px-2 rounded-full ${getIndexClass(index)}`}>
-                  {index + 1}
-                </span>
-                <div className='flex flex-col text-left w-full'>
-                  <span>{user.username}</span>
-                  <span className='font-bold'>{user.score} puntos</span>
-                </div>
-              </li>
-            ))
-            .slice(0, 10)}
-        </ul>
+        {users.length > 0 ? (
+          <ul>
+            {users
+              .map((user, index) => (
+                <li
+                  key={user.id}
+                  className='flex items-start justify-start gap-2 py-1 px-4'
+                >
+                  <span
+                    className={` px-2 rounded-full ${getIndexClass(index)}`}
+                  >
+                    {index + 1}
+                  </span>
+                  <div className='flex flex-col text-left w-full'>
+                    <span>{user.username}</span>
+                    <span className='font-bold'>{user.score} puntos</span>
+                  </div>
+                </li>
+              ))
+              .slice(0, 10)}
+          </ul>
+        ) : (
+          <p className='text-center'>
+            El ranking está vacío por ahora.
+            <br />
+            ¿Te animas a empezar?
+          </p>
+        )}
       </div>
-      <Button onClick={() => navigate('/home')}>Volver a jugar</Button>
+      <Button onClick={() => navigate('/home')}>Volver al juego</Button>
     </div>
   );
 }

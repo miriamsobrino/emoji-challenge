@@ -19,6 +19,9 @@ function Welcome() {
       alert('Error al iniciar sesión con Google');
     }
   };
+  const navigateToHome = () => {
+    navigate('/home');
+  };
   return (
     <div className='w-full  h-screen flex flex-col justify-center items-center gap-3 '>
       <h1 className='text-red-500 text-4xl lg:text-5xl font-bold'>
@@ -30,7 +33,9 @@ function Welcome() {
       </h2>
       <div className='flex gap-2'>
         <Button onClick={signIn}>Jugar con cuenta</Button>
-        <Button variant='secondary'>Jugar como invitado</Button>
+        <Button variant='secondary' onClick={navigateToHome}>
+          Jugar como invitado
+        </Button>
       </div>
       <span className='text-neutral-400 text-xs lg:text-sm  text-center'>
         Si juegas como invitado, no se guardará tu historial de puntuaciones.
