@@ -125,11 +125,12 @@ function Home() {
             <div className='flex gap-1 items-center'>
               <ProgressBar value={actualScore} />{' '}
               <BiSolidTrophy size={24} className='text-amber-400' />
-              <span className=' bg-amber-400 px-2 py-1 rounded-full font-semibold flex items-center text-white justify-center text-sm'>
-                {userScore}
-              </span>
+              {user && (
+                <span className=' bg-amber-400 px-2 py-1 rounded-full font-semibold flex items-center text-white justify-center text-sm'>
+                  {userScore}
+                </span>
+              )}
             </div>
-            <h3 className='text-5xl lg:text-4xl '>{currentMovie.emojis}</h3>
             {isErrorAnswer || isCorrectAnswer ? (
               <p className='font-bold'>
                 {Array.isArray(currentMovie.answers)
@@ -139,6 +140,7 @@ function Home() {
             ) : (
               ''
             )}
+            <h3 className='text-5xl lg:text-4xl '>{currentMovie.emojis}</h3>
             <form className='flex gap-2 ' onSubmit={handleSubmit}>
               <input
                 value={userAnswer}
