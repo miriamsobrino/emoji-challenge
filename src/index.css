@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import 'tailwindcss';
+@import 'tailwindcss-animated';
+html {
+  font-family: 'Nunito', sans-serif;
+}
+h1 {
+  font-family: 'Helvetica', sans-serif;
+}
+
+@layer utilities {
+  @keyframes float-up {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+  }
+
+  .animate-float-up {
+    animation: float-up 1s ease-out forwards;
+  }
+
+  .bg-full-screen {
+    background-image: url('/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
