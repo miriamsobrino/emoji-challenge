@@ -19,7 +19,7 @@ function Button({
   return (
     <button
       type={type}
-      className={`w-auto 0 px-4 py-1 border-2 text-sm lg:text-base flex items-center justify-center gap-2 border-red-500 ${roundedClass} ${
+      className={`w-auto 0 px-4 py-1 border-2 text-sm lg:text-lg flex items-center justify-center gap-2 border-red-500 ${roundedClass} ${
         variant === 'primary'
           ? 'bg-red-500 text-emerald-50 hover:bg-red-400'
           : 'bg-transparent text-red-500 '

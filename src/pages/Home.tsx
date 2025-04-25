@@ -145,10 +145,37 @@ function Home() {
         )}
       </div>
       {isGameFinish && !isGameActive && (
-        <span className='text-xl font-semibold '>
-          Juego terminado. Tu puntuación fue: {actualScore} / {totalScore}
+        <span className='text-2xl font-semibold mb-2 '>
+          Juego terminado. <br /> Tu puntuación fue: {actualScore} /{' '}
+          {totalScore}
         </span>
       )}
+      <h2
+        className={`text-2xl text-gray-800 font-bold ${
+          isGameActive || isGameFinish ? 'hidden' : ''
+        }`}
+      >
+        Instrucciones
+      </h2>
+      <div
+        className={`w-[420px] flex flex-col justify-center items-center gap-2 text-balance bg-amber-50 rounded-md py-4 mb-2 ${
+          isGameActive || isGameFinish ? 'hidden' : ''
+        }`}
+      >
+        <p>
+          Deberás adivinar el título de 20 películas basándote en un conjunto de
+          emojis.
+        </p>
+        <p>Por cada respuesta correcta, ganarás 5 puntos.</p>
+        <p>
+          El objetivo es acumular la mayor cantidad de puntos posible, con una
+          puntuación máxima de 100 puntos al final del juego.
+        </p>
+        <p className='mb-2 font-bold'>
+          ¡Pon a prueba tu memoria cinematográfica y demuestra tus conocimientos
+          en películas!
+        </p>
+      </div>
       <Button onClick={resetGame} className={`${isGameActive ? 'hidden' : ''}`}>
         {isGameFinish ? (
           <>
