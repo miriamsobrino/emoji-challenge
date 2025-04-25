@@ -165,13 +165,12 @@ function Home() {
         <h2 className='text-2xl text-gray-800 font-bold mb-2'>Instrucciones</h2>
         <div className=' w-[360px] lg:w-[420px] text-base flex flex-col justify-center items-center gap-2 text-balance bg-amber-50 rounded-md py-4 mb-2 '>
           <p>
-            Deberás adivinar el título de 20 películas basándote en un conjunto
-            de emojis.
+            Deberás adivinar el título de 20 películas basándote en 3 emojis.
           </p>
           <p>Por cada respuesta correcta, ganarás 5 puntos.</p>
           <p>
-            El objetivo es acumular la mayor cantidad de puntos posible, con una
-            puntuación máxima de 100 puntos al final del juego.
+            El objetivo es acumular la mayor cantidad de puntos posible. Podrás
+            obtener un máximo de 100 puntos al final del juego.
           </p>
           <p className='mb-2 font-bold'>
             ¡Pon a prueba tu memoria cinematográfica y demuestra tus
