@@ -40,6 +40,7 @@ function Ranking() {
         {users.length > 0 ? (
           <ul>
             {users
+              .filter((user) => user.score > 0)
               .map((user, index) => (
                 <li
                   key={user.id}
