@@ -24,9 +24,12 @@ const useUserScore = (user: User | null) => {
   const updateScore = async (newScore: number) => {
     if (user?.uid) {
       try {
-        const { ref: userRef } = await getUserData(user.uid);
-        await update(userRef, { score: newScore });
-        setUserScore(newScore);
+        const { ref: userRef, data: userData } = await getUserData(user.uid);
+        const currentScore = userData?.score ?? 0;
+        if (newScore && newScore > currentScore) {
+          await update(userRef, { score: newScore });
+          setUserScore(newScore);
+        }
       } catch (err) {
         console.error('Error actualizando el puntaje en Firebase:', err);
       }
