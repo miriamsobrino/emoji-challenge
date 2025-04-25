@@ -33,8 +33,8 @@ function Home() {
   const isCorrect = validAnswers.some(
     (ans) =>
       typeof ans === 'string' &&
-      normalizeString(ans.toLowerCase()) ===
-        normalizeString(userAnswer.toLowerCase())
+      normalizeString(ans.toLowerCase()).trim() ===
+        normalizeString(userAnswer.toLowerCase()).trim()
   );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
