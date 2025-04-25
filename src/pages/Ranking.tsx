@@ -31,16 +31,18 @@ function Ranking() {
 
     fetchUsers();
   }, []);
+
+  const filteredUsers = users.filter((user) => user.score > 0);
   return (
     <div className='justify-center items-center gap-4 flex flex-col'>
       <h2 className='text-2xl text-gray-800 font-bold text-center'>
         Ranking Puntuaciones
       </h2>
       <div className='flex justify-center bg-amber-50 w-[300px] mx-auto rounded-md py-3 '>
-        {users.length > 0 ? (
+        {filteredUsers.length > 0 ? (
           <ul>
             {users
-              .filter((user) => user.score > 0)
+
               .map((user, index) => (
                 <li
                   key={user.id}
