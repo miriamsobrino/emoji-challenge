@@ -123,7 +123,7 @@ function Home() {
         {isGameActive && (
           <>
             <div className='flex gap-1 items-center'>
-              <ProgressBar value={actualScore} />{' '}
+              <ProgressBar value={actualScore} />
               <BiSolidTrophy size={24} className='text-amber-400' />
               {user && (
                 <span className=' bg-amber-400 px-2 py-1 rounded-full font-semibold flex items-center text-white justify-center text-sm'>

@@ -1,8 +1,10 @@
 import * as Progress from '@radix-ui/react-progress';
+import { useAuth } from '../context/AuthContext';
 
 function ProgressBar({ value }: { value: number }) {
+  const { user } = useAuth();
   return (
-    <div className='relative w-[260px] h-6'>
+    <div className={`relative ${user ? 'w-[260px]' : 'w-[280px]'} h-6`}>
       <Progress.Root
         className='absolute top-0 left-0 w-full h-full bg-gray-300 rounded-full overflow-hidden'
         value={value}
